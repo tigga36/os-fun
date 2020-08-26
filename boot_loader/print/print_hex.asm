@@ -37,7 +37,6 @@ Skip:
 end:
 	mov bx, HEX_OUT
 	call print_string
-	jmp $
 	popa
 	ret
 
