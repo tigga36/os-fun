@@ -15,7 +15,7 @@ print_string_pm_loop:
 	mov ah, WHITE_ON_BLACK ; Store attributes to AH
 
 	cmp al, 0 ; check for end of string
-	je done
+	je print_string_pm_done
 
 	mov [edx], ax ; store char and attribute at current character cell
 

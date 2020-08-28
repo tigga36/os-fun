@@ -1,4 +1,4 @@
-[bits 32]
+[bits 16]
 
 ; Make the switch to Protected Mode (32-bit)
 switch_to_pm:

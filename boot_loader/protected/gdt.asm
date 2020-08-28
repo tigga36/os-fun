@@ -40,4 +40,4 @@ gdt_descriptor:
 ; Additional constants are defined below that will be useful. They are essentially offsets within the GDT to where the respective segments are. (0x0 points to the null descriptor, 0x08 points to code, and 0x10 points to data)
 
 CODE_SEG equ gdt_code - gdt_start
-DATA_SEG equ gdt_data - gdt_star
+DATA_SEG equ gdt_data - gdt_start
