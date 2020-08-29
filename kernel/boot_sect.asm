@@ -34,6 +34,7 @@ load_kernel:
 	
 	mov bx, KERNEL_OFFSET ; Setting up arguments in registers to get ready for drive_reader
 	mov dh, 15 ; The 15 here means that basically we read the first 15 sectors of the boot disk 
+	; But why read so many sectors? The kernel image is supposedly a lot smaller than this. Because we can. Even if it were to be empty, it doesn't hurt to allocate this much for now, as we may need more space as the kernel grows. Insufficient space allocated for kernels could force the process to keel over and die without any warning, which could be very nasty to debug.
 	mov dl, [BOOT_DRIVE]
 	call disk_load
 
