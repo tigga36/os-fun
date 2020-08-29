@@ -11,3 +11,6 @@ kernel.o : kernel.c
 # ...and the kernel entry object file
 point2entry.o : point2entry.asm
 	nasm $< -f elf -o $@
+
+clean:
+	rm *.bin *.o
