@@ -12,3 +12,7 @@ Assert your dominance by using `$<`, `$@`, `$^` which are special makefile varia
 - `$<`: Represents the first dependency
 - `$@`: Represents the target file
 - `$^`: Substitutes all of the target's dependency files
+
+Furthermore, make use of the `clean` target. When running `make clean`, it will run the directive, and by design you can make it delete any output files that you would like to get rid of to reduce clutter or making sure the file builds correctly from scratch.
+
+Also, when running `make` without anything after, it will run the first directive in the Makefile. To prevent unintended directives from running, often dummy targets are set up on top of makefiles to force execution of an intended directive. The name can be anything, but often names such as `all` is set.
