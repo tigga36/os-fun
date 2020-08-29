@@ -29,7 +29,7 @@ boot_sect.bin : boot_sect.asm
 
 # Cleaner for deleting all generated files
 clean :
-	rm *.bin *.o
+	rm -fr *.bin *.o os-image *.map *.dis
 
 # Bonus disassembler command to generate disassembled kernel file
 kernel.dis : kernel.bin
