@@ -72,5 +72,6 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y git
     sudo apt-get install -y nasm
     sudo apt-get install -y qemu
+    sudo apt-get install -y make
   SHELL
 end
