@@ -24,7 +24,7 @@ Compiling assembly files with nasm
 
 Compiling C code into object files, linking them into a binary file (specify flags to output elf-32 files), and disassembling them
 
-> gcc -ffreestanding -c foo.c -o foo.o
+> gcc -m32 -ffreestanding -c foo.c -o foo.o
 > ld -m elf_i386 -o foo.bin -Ttext 0x1000 foo.o --oformat binary
 > ndisasm -b 32 foo.bin > foo.dis
 
