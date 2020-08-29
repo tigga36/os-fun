@@ -19,11 +19,11 @@ KERNEL_OFFSET equ 0x1000 ; Memory offset to where to load the kernel
 	jmp $ ; Obligatory stuck here
 
 ; Call previously-created routines
-%include "../boot_loader/print/print_string.asm"
-%include "../boot_loader/drive_reader/drive_reader.asm"
-%include "../boot_loader/protected/gdt.asm"
-%include "../boot_loader/protected/print_string_pm.asm"
-%include "../boot_loader/protected/switcheroo.asm"
+%include "./print/print_string.asm"
+%include "../drive/drive_reader.asm"
+%include "./gdt.asm"
+%include "./print/print_string_pm.asm"
+%include "./switcheroo.asm"
 
 [bits 16]
 
