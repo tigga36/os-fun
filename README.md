@@ -32,6 +32,10 @@ Compiling multiple object files (offset all local address references from origin
 
 > ld -m elf_i386 -o foobar.bin -Ttext 0xabcd foo.o bar.o --oformat binary
 
+Compile a assembly file into object file
+
+> nasm foo.asm -f elf -o foo.o
+
 Emulate created image on virtual machine
 
 > qemu-system-x86_64 -fda foo
