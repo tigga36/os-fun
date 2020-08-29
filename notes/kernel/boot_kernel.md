@@ -29,5 +29,6 @@ It's been roughly 2 months since I last touched assembly so I mostly forgot abou
 
 So, back to kernels. W\We need to figure out which disk/sector to load the kernel. First, about **kernel images**. Kernel images are the idea that the boot sector and kernel of an OS can be grafted together into something called a kernel images. The image can then be written on the initial sectors of the boot disk, so the boot sector code goes before the kernel image always. By grafting, I mean literally concatenating the compiled boot sector and kernel binaries together as so:
 
-> cat boot_sect.bin kernel.bin > os-imag
+> cat boot_sect.bin kernel.bin > os-image
 
+Now, use that image to boot your virtual OS emulator of choice (qemu for me)
