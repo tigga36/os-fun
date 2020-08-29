@@ -6,3 +6,9 @@ Commands like `nasm`, `ld`, `gcc`, are consulted every time to implement the sma
 >	gcc -ffreestanding -c foo.c -o foo.o
 
 Now, just type `make foo.o`, and whenever foo.o doesn't exist in that directory, make will do the compiling for you with the command you specified it with. Things will get really convenient once you set up a Makefile that automates consecutive interdependent commands to achieve a final product. 
+
+Assert your dominance by using `$<`, `$@`, `$^` which are special makefile variables. 
+
+- `$<`: Represents the first dependency
+- `$@`: Represents the target file
+- `$^`: Substitutes all of the target's dependency files
