@@ -1,3 +1,6 @@
+# Setting default directive
+all: kernel.bin
+
 # Compile the kernel binary file
 # The $^ variable denotes all dependency files
 kernel.bin : point2entry.o kernel.o
