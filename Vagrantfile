@@ -73,5 +73,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y nasm
     sudo apt-get install -y qemu
     sudo apt-get install -y make
+    # Below are dependencies for building a GCC cross compiler
+    sudo apt-get install -y g++ bison flex libgmp3-dev libmpfr-dev libmpc-dev texinfo libcloog-isl-dev libisl-dev
   SHELL
 end
