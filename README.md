@@ -2,7 +2,9 @@
 
 A beginner project on building an OS from scratch to familiarize myself with binary concepts. The hope is it'll help with binary exploitation in CTF.
 
-Progression steps and code are heavily influenced, if not basically completely taken from *Writing a Simple Operating System from Scratch*, by Nick Blundell. Almost all of the code are mostly copied from the contents of the textbook, as are the CLI tools used throughout.
+Progression steps and code are heavily influenced, if not basically completely taken from *Writing a Simple Operating System from Scratch*, by Nick Blundell (or, as far as it was written before being publically released). Almost all of the code are mostly copied from the contents of the textbook, as are the CLI tools used throughout, up to the point of getting a simple toy kernel to run via a self-made boot loader.
+
+From then on, development of drivers and kernels mostly will be based off of online textbooks and resources (courtesy of OSDev Wiki)
 
 ## Deadline/Goals
 
@@ -12,7 +14,16 @@ Early March/April: Familiarize myself with assembly, code boot disk and code up 
 August: Boot into 32-bit protected mode, load a toy kernel system to ensure successful kernel-loading  
 => COMPLETED
 
-Mid-September: Fill out kernel to create a bare-bone but functioning file system and driver
+Mid-September: Fill out kernel to create a bare-bone but functioning file system and driver. This is bound to be a bite far larger than I can chew, so I am willing to extend the deadline to the full extent of September. This goal is split into the following chunks:
+
+- Build a cross-compiler for kernel development
+- Build a display driver
+- Build a interrupt handler
+- Build a Keyboard driver
+- Build a HD driver
+- Build a File System
+
+Post October: Lay out final goals for my definition of a 'functioning OS'. Set a realistic goal to get my OS to become, taking into consideration what I would learn along the way and the work/time needed to be allocated.
 
 Beyond: Beyond this point, I am planning on extending various features to the OS, such as memory protection. While up to the extent of the textbook I'm reading will be a short-term project to familiarize myself with basic OS concepts and the necessary engineering, the hope is that beyond that point this project can develop into a long-term sandbox where I can use as a foundation for future OS-related security projects.
 
