@@ -54,7 +54,9 @@ Vagrant.configure("2") do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-    vb.memory = "1024"
+    vb.memory = "8192"
+    vb.cpus = "1"
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
   #
   # View the documentation for the provider you are using for more
@@ -75,5 +77,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y make
     # Below are dependencies for building a GCC cross compiler
     sudo apt-get install -y g++ bison flex libgmp3-dev libmpfr-dev libmpc-dev texinfo libcloog-isl-dev libisl-dev
+    # Another addition to dependency due to make gcc throwing error
+    sudo apt-get install -y gcc-multilib
   SHELL
 end
