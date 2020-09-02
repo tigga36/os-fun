@@ -23,14 +23,14 @@ os-image : booty/boot_sect.bin kernel.bin
 # Compile the kernel binary file
 # The $^ variabln denotes all dependency files
 kernel.bin : kernel/point2entry.o ${OBJ}
-	ld -m elf_i386 -o $@ -Ttext 0x1000 $^ --oformat binary
+	i686-elf-as -o $@ -Ttext 0x1000 $^
 
 # To do the above, we need all object files
 # $< denotes the first dependency, and $@ represents the target file
 # Below code is updated from compiling just the kernel.c file to a general rule to be applied to all C file to object file
 # Ensure object files also depend on header files as well
 %.o : %.c ${HEADERS}
-	gcc -m32 -ffreestanding -c $< -o $@
+	i686-elf-gcc -ffreestanding -c $< -o $@
 
 # ...and the kernel entry object file
 # point2entry.o-specific compilation is replaced with a generic file-type-based rule
