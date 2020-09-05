@@ -75,6 +75,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y nasm
     sudo apt-get install -y qemu
     sudo apt-get install -y make
+    sudo apt-get install -y grub
+    sudo apt-get install -y xorriso
     # Below are dependencies for building a GCC cross compiler
     sudo apt-get install -y g++ bison flex libgmp3-dev libmpfr-dev libmpc-dev texinfo libcloog-isl-dev libisl-dev
     # Another addition to dependency due to make gcc throwing error
