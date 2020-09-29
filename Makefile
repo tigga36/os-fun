@@ -19,22 +19,22 @@ run : all
 # Concatenating the final binaries into an image
 
 # The actual final compilation stage to include kernel is disabled. This is creating a disk read error when the resulting image is booted.
-#os-image : booty/boot_sect.bin kernel.bin
-os-image : booty/boot_sect.bin
+os-image : booty/boot_sect.bin kernel.bin
+#os-image : booty/boot_sect.bin
 	cat $^ > os-image
 
 
 # Compile the kernel binary file
 # The $^ variabln denotes all dependency files
-#kernel.bin : kernel/point2entry.o ${OBJ}
-#	i686-elf-as -o $@ -Ttext 0x1000 $^
+kernel.bin : kernel/point2entry.o ${OBJ}
+	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
 # To do the above, we need all object files
 # $< denotes the first dependency, and $@ represents the target file
 # Below code is updated from compiling just the kernel.c file to a general rule to be applied to all C file to object file
 # Ensure object files also depend on header files as well
 %.o : %.c ${HEADERS}
-	i686-elf-gcc -ffreestanding -c $< -o $@
+	i686-elf-gcc -c $< -o $@ -ffreestanding
 
 # ...and the kernel entry object file
 # point2entry.o-specific compilation is replaced with a generic file-type-based rule
