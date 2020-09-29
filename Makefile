@@ -17,6 +17,8 @@ run : all
 	qemu-system-x86_64 -fda os-image
 
 # Concatenating the final binaries into an image
+
+# The actual final compilation stage to include kernel is disabled. This is creating a disk read error when the resulting image is booted.
 #os-image : booty/boot_sect.bin kernel.bin
 os-image : booty/boot_sect.bin
 	cat $^ > os-image
