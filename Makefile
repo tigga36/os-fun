@@ -17,13 +17,15 @@ run : all
 	qemu-system-x86_64 -fda os-image
 
 # Concatenating the final binaries into an image
-os-image : booty/boot_sect.bin kernel.bin
+#os-image : booty/boot_sect.bin kernel.bin
+os-image : booty/boot_sect.bin
 	cat $^ > os-image
+
 
 # Compile the kernel binary file
 # The $^ variabln denotes all dependency files
-kernel.bin : kernel/point2entry.o ${OBJ}
-	i686-elf-as -o $@ -Ttext 0x1000 $^
+#kernel.bin : kernel/point2entry.o ${OBJ}
+#	i686-elf-as -o $@ -Ttext 0x1000 $^
 
 # To do the above, we need all object files
 # $< denotes the first dependency, and $@ represents the target file
